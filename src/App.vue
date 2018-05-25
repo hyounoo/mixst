@@ -11,6 +11,7 @@
             <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
         <v-list-tile to="/dashboard">
           <v-list-tile-action>
             <v-icon>dashboard</v-icon>
@@ -26,6 +27,15 @@
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>Contact</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile to="/logout" v-if="loggedIn">
+          <v-list-tile-action>
+            <v-icon>exit_to_app</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Logout</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -47,11 +57,17 @@
 </template>
 
 <script>
+import auth from '@/utils/auth'
 export default {
   name: 'app',
   data: () => ({
     drawer: null
-  })
+  }),
+  computed: {
+    loggedIn() {
+      return auth.loggedIn()
+    }
+  }
 }
 </script>
 

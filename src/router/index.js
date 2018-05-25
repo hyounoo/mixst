@@ -32,6 +32,12 @@ export default new Router({
   routes: [
     { path: '/404', component: ErrorPage, name: 'ErrorPage' },
     {
+      path: '/home',
+      component: Home,
+      name: 'Home',
+      beforeEnter: requireAuth
+    },
+    {
       path: '/dashboard',
       component: Dashboard,
       name: 'Dashboard',
@@ -41,12 +47,6 @@ export default new Router({
       path: '/about',
       component: About,
       name: 'About',
-      beforeEnter: requireAuth
-    },
-    {
-      path: '/home',
-      component: Home,
-      name: 'Home',
       beforeEnter: requireAuth
     },
     {
@@ -66,7 +66,7 @@ export default new Router({
         next('/login')
       }
     },
-    { path: '/', redirect: '/dashboard' },
+    { path: '/', redirect: '/home' },
     { path: '*', redirect: '/404' }
   ]
   // meta: {
