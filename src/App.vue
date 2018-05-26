@@ -30,6 +30,15 @@
           </v-list-tile-content>
         </v-list-tile>
 
+        <v-list-tile to="/player">
+          <v-list-tile-action>
+            <v-icon>play_arrow</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Player</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
         <v-list-tile to="/logout" v-if="loggedIn">
           <v-list-tile-action>
             <v-icon>exit_to_app</v-icon>

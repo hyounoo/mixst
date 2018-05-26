@@ -3,13 +3,12 @@ import Router from 'vue-router'
 
 import ErrorPage from '@/components/404'
 import Login from '@/components/Login'
+import Player from '@/components/Player'
 
 import Home from '@/pages/Home'
 import About from '@/pages/About'
 import Contact from '@/pages/Contact'
 import Dashboard from '@/pages/Dashboard'
-
-import Player from '@/components/Player'
 
 import auth from '@/utils/auth'
 
