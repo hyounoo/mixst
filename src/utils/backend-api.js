@@ -68,17 +68,6 @@ export default {
     return instance.delete(url)
   },
   login(action, data) {
-    if (!BASE_URL) {
-      return {
-        access_token: 'fake-token-12345789-abcdefgh',
-        user: {
-          firstName: 'Admin',
-          lastName: '',
-          email: 'admin@test.com',
-          password: 'password'
-        }
-      }
-    }
     let url = `${BASE_URL}`
     url += action
     return instance.get(url, data)
