@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://localhost:5354/'
+const BASE_URL = 'http://localhost:8088/'
 
 const instance = axios.create({
   baseURL: BASE_URL,
@@ -10,7 +10,7 @@ const instance = axios.create({
 
 // Add a request interceptor
 instance.interceptors.request.use(
-  function (config) {
+  function(config) {
     /* global window Store */
     const { token } = Store.state.user
     console.log('token', token)
@@ -25,7 +25,7 @@ instance.interceptors.request.use(
 
     return config
   },
-  function (error) {
+  function(error) {
     // Do something with request error
     return Promise.reject(error)
   }

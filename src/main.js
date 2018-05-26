@@ -7,14 +7,14 @@ import App from './App'
 import router from '@/router'
 import store from '@/store'
 import api from './utils/backend-api'
-// import appUtil from './utils/app-util'
+import appUtil from './utils/app-util'
 
 Vue.use(Vuetify)
 Vue.config.productionTip = false
 
 window.Store = store
 Vue.prototype.api = api
-// Vue.prototype.appUtil = appUtil
+Vue.prototype.appUtil = appUtil
 
 /* eslint-disable no-new */
 new Vue({

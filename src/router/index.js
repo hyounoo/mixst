@@ -9,6 +9,8 @@ import About from '@/pages/About'
 import Contact from '@/pages/Contact'
 import Dashboard from '@/pages/Dashboard'
 
+import Player from '@/components/Player'
+
 import auth from '@/utils/auth'
 
 Vue.use(Router)
@@ -59,6 +61,11 @@ export default new Router({
       path: '/login',
       component: Login,
       name: 'Login'
+    },
+    {
+      path: '/player',
+      component: Player,
+      name: 'Player'
     },
     {
       path: '/logout',
