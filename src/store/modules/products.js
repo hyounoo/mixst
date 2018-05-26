@@ -1,5 +1,7 @@
 import api from '@/utils/backend-api'
-import { Product } from '@/models'
+import {
+  Product
+} from '@/models'
 import {
   sendSuccessNotice,
   sendErrorNotice,
@@ -7,7 +9,9 @@ import {
   getDefaultPagination,
   commitPagination
 } from '@/utils/store-util.js'
-import { get } from 'lodash'
+import {
+  get
+} from 'lodash'
 
 const state = {
   items: [],
@@ -25,7 +29,9 @@ const state = {
 const getters = {}
 
 const actions = {
-  getCategories({ commit }) {
+  getCategories({
+    commit
+  }) {
     api.getData('categories').then(res => {
       const categories = []
       res.data.forEach(c => {
@@ -39,7 +45,9 @@ const actions = {
       commit('setCategories', categories)
     })
   },
-  getProductById({ commit }, id) {
+  getProductById({
+    commit
+  }, id) {
     if (id) {
       api.getData('products/' + id + '?_expand=category').then(
         res => {
@@ -58,7 +66,9 @@ const actions = {
       })
     }
   },
-  getAllProducts({ commit }) {
+  getAllProducts({
+    commit
+  }) {
     commit('setLoading', {
       loading: true
     })
@@ -73,7 +83,9 @@ const actions = {
       })
     })
   },
-  searchProducts({ commit }, searchQuery) {
+  searchProducts({
+    commit
+  }, searchQuery) {
     api.getData('products?_expand=category&' + searchQuery).then(res => {
       const products = res.data
       products.forEach(p => {
@@ -82,7 +94,13 @@ const actions = {
       commitPagination(commit, products)
     })
   },
-  quickSearch({ commit }, { headers, qsFilter, pagination }) {
+  quickSearch({
+    commit
+  }, {
+    headers,
+    qsFilter,
+    pagination
+  }) {
     // TODO: Following solution should be replaced by DB full-text search for production
     api.getData('products?_expand=category').then(res => {
       const products = res.data.filter(r =>
@@ -91,9 +109,9 @@ const actions = {
           return (
             (val &&
               val
-                .toString()
-                .toLowerCase()
-                .includes(qsFilter)) ||
+              .toString()
+              .toLowerCase()
+              .includes(qsFilter)) ||
             false
           )
         })
@@ -104,7 +122,10 @@ const actions = {
       commitPagination(commit, products)
     })
   },
-  deleteProduct({ commit, dispatch }, id) {
+  deleteProduct({
+    commit,
+    dispatch
+  }, id) {
     api
       .deleteData('products/' + id.toString())
       .then(res => {
@@ -119,7 +140,10 @@ const actions = {
         closeNotice(commit, 1500)
       })
   },
-  saveProduct({ commit, dispatch }, product) {
+  saveProduct({
+    commit,
+    dispatch
+  }, product) {
     delete product.category
     if (!product.id) {
       api
@@ -155,7 +179,9 @@ const actions = {
         })
     }
   },
-  closeSnackBar({ commit }, timeout) {
+  closeSnackBar({
+    commit
+  }, timeout) {
     closeNotice(commit, timeout)
   }
 }
@@ -170,20 +196,30 @@ const mutations = {
   setPagination(state, pagination) {
     state.pagination = pagination
   },
-  setLoading(state, { loading }) {
+  setLoading(state, {
+    loading
+  }) {
     state.loading = loading
   },
-  setNotice(state, { notice }) {
+  setNotice(state, {
+    notice
+  }) {
     console.log(' notice .... ', notice)
     state.notice = notice
   },
-  setSnackbar(state, { snackbar }) {
+  setSnackbar(state, {
+    snackbar
+  }) {
     state.snackbar = snackbar
   },
-  setMode(state, { mode }) {
+  setMode(state, {
+    mode
+  }) {
     state.mode = mode
   },
-  setProduct(state, { product }) {
+  setProduct(state, {
+    product
+  }) {
     state.product = product
   }
 }

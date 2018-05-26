@@ -4,9 +4,9 @@ import createPersistedState from 'vuex-persistedstate'
 import createMutationsSharer from 'vuex-shared-mutations'
 // import api from "@/utils/backend-api"
 import user from './modules/user'
-import products from './modules/products'
-import orders from './modules/orders'
-import customers from './modules/customers'
+// import products from './modules/products'
+// import orders from './modules/orders'
+// import customers from './modules/customers'
 import i18n from '../locales'
 
 Vue.use(Vuex)
@@ -27,10 +27,14 @@ export default new Vuex.Store({
     setLoadingStatus(context, status) {
       context.commit('setLoading', status)
     },
-    switchI18n({ commit }, lang) {
+    switchI18n({
+      commit
+    }, lang) {
       commit('setI18n', lang)
     },
-    updateSurveyStep({ commit }, step) {
+    updateSurveyStep({
+      commit
+    }, step) {
       commit('setSurveyStep', step)
     }
   },
@@ -48,9 +52,9 @@ export default new Vuex.Store({
   },
   modules: {
     user,
-    products,
-    orders,
-    customers
+    // products,
+    // orders,
+    // customers
   },
   plugins: [
     createPersistedState({
