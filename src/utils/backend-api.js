@@ -1,6 +1,13 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://localhost:8088/'
+let dic = {
+  localhost: 'http://localhost:8088/'
+}
+
+let hostname = window.location.hostname
+console.log('hostname: ' + hostname)
+
+const BASE_URL = dic[hostname]
 
 const instance = axios.create({
   baseURL: BASE_URL,
