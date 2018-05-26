@@ -29,6 +29,7 @@ module.exports = {
     beforeStatementContinuationChars: 'never',
     'space-before-function-paren': 0,
     'standard/computed-property-even-spacing': 'on',
-    'standard/no-callback-literal': [2, ["cb", "callback"]]
+    'standard/no-callback-literal': [2, ["cb", "callback"]],
+    'no-unused-vars': 0
   }
 }

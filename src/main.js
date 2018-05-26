@@ -9,6 +9,12 @@ import store from '@/store'
 import api from './utils/backend-api'
 import appUtil from './utils/app-util'
 import i18n from './locales'
+import moment from 'moment';
+import VueMomentJS from 'vue-momentjs';
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios, axios)
+Vue.use(VueMomentJS, moment);
 
 Vue.use(Vuetify)
 Vue.config.productionTip = false
@@ -28,6 +34,8 @@ new Vue({
   router,
   store,
   i18n,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
 })

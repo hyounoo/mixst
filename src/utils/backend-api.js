@@ -17,9 +17,11 @@ const instance = axios.create({
 
 // Add a request interceptor
 instance.interceptors.request.use(
-  function(config) {
+  function (config) {
     /* global window Store */
-    const { token } = Store.state.user
+    const {
+      token
+    } = Store.state.user
     console.log('token', token)
     if (token) {
       config.headers.common['Authorization'] = 'Bearer ' + token
@@ -32,7 +34,7 @@ instance.interceptors.request.use(
 
     return config
   },
-  function(error) {
+  function (error) {
     // Do something with request error
     return Promise.reject(error)
   }
