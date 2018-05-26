@@ -12,9 +12,10 @@ const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
 const proxyMiddleware = require('http-proxy-middleware')
-const webpackConfig = process.env.NODE_ENV === 'testing'
-  ? require('./webpack.prod.conf')
-  : require('./webpack.dev.conf')
+const webpackConfig = process.env.NODE_ENV === 'testing' ?
+  require('./webpack.prod.conf') :
+  require('./webpack.dev.conf')
+
 
 // default port where dev server listens for incoming traffic
 const port = process.env.PORT || config.dev.port
@@ -38,7 +39,9 @@ const hotMiddleware = require('webpack-hot-middleware')(compiler, {
 // force page reload when html-webpack-plugin template changes
 compiler.plugin('compilation', function (compilation) {
   compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
-    hotMiddleware.publish({ action: 'reload' })
+    hotMiddleware.publish({
+      action: 'reload'
+    })
     cb()
   })
 })
@@ -51,7 +54,9 @@ app.use(hotMiddleware)
 Object.keys(proxyTable).forEach(function (context) {
   let options = proxyTable[context]
   if (typeof options === 'string') {
-    options = { target: options }
+    options = {
+      target: options
+    }
   }
   app.use(proxyMiddleware(options.filter || context, options))
 })
@@ -84,6 +89,45 @@ devMiddleware.waitUntilValid(() => {
 })
 
 const server = app.listen(port)
+
+// Pusher
+const bodyParser = require('body-parser');
+const Pusher = require('pusher');
+const axios = require('axios');
+
+var pusher = new Pusher({
+  appId: '',
+  key: '',
+  secret: '',
+  cluster: 'ap1',
+  encrypted: true
+});
+// Body parser middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+// CORS middleware
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Credentials', true)
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
+  next()
+});
+// Routes
+app.get('/', _ => res.send('Welcome'));
+// Simulated Cron
+setInterval(_ => {
+  let url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC&tsyms=USD';
+  axios.get(url).then(res => {
+    pusher.trigger('price-updates', 'coin-updates', {
+      coin: res.data
+    })
+  })
+}, 5000)
+// Start app
+app.listen(8000, () => console.log('App running on port 8000!'));
 
 module.exports = {
   ready: readyPromise,

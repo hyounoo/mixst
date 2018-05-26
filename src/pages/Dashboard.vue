@@ -12,8 +12,7 @@
   </div>
 </template>
 <script>
-// import this.moment from 'this.moment'
-// import this.axios from 'this.axios'
+import Pusher from 'pusher-js'
 import Intro from '@/components/Intro'
 import Current from '@/components/Current'
 import Previous from '@/components/Previous'
@@ -97,6 +96,19 @@ export default {
       this._fetchDataFor('fiveDays', 5)
       this._fetchDataForToday()
     }
+
+    let pusher = new Pusher('2c8ff75753df75edb6ae', {
+      cluster: 'ap1',
+      encrypted: true
+    })
+    let channel = pusher.subscribe('price-updates')
+    channel.bind('coin-updates', data => {
+      this.currentCurrency = {
+        BTC: data.coin.BTC.USD,
+        ETH: data.coin.ETH.USD,
+        LTC: data.coin.LTC.USD
+      }
+    })
   }
 }
 </script>
