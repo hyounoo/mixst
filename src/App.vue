@@ -50,7 +50,7 @@
     </v-content>
     <v-footer color="cyan" app>
       <v-spacer></v-spacer>
-      <span class="white--text mr-2">Mixst &copy; 2018</span>
+      <span class="white--text mr-2">Mixst &copy; 2018 </span>
     </v-footer>
   </v-app>
 </div>
