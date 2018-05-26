@@ -9,18 +9,19 @@
     "start": "node build/dev-server.js",
     "start:server": "json-server -p 8088 db/db.json",
     "build": "node build/build.js",
-    "unit":
-      "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "vue": "^2.5.2",
+    "vue-i18n": "^7.7.0",
     "vue-router": "^3.0.1",
     "vuetify": "^1.0.18",
     "vuex": "^3.0.1",
-    "vuex-persistedstate": "^2.5.4"
+    "vuex-persistedstate": "^2.5.4",
+    "vuex-shared-mutations": "0.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",
@@ -94,5 +95,9 @@
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }

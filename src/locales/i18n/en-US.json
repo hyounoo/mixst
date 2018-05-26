@@ -1,0 +1,33 @@
+{
+  "error": {
+    "invalid_grant": "The user name or password is incorrect",
+    "network_error": "Network Error"
+  },
+  "validation": {
+    "required": " is required.",
+    "invalid": " must be valid."
+  },
+  "login": {
+    "applicationName": "Mixst",
+    "userId": "User ID",
+    "password": "Password",
+    "login": "Login",
+    "singupIntroDesc": "Signup to Mixst.",
+    "singupIntro": "Sign up",
+    "findPasswordDesc": "Forgot password?",
+    "findPassword": "Find password"
+  },
+  "signup": {
+    "email": "Email",
+    "passwordConfirm": "Password Confirm",
+    "signup": "Sign up",
+    "agreement": "Terms of agreement.",
+    "agreementMsg": "You must agree to continue!"
+  },
+  "greeting": "Hello, {0}",
+  "saveCompleted": "Save completed!",
+  "total": "Sum",
+  "notice": {
+    "msg": "You have message"
+  }
+}

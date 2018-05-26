@@ -1,5 +1,5 @@
 import api from '@/utils/backend-api'
-import Product from '@/models'
+import { Product } from '@/models'
 import {
   sendSuccessNotice,
   sendErrorNotice,

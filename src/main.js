@@ -8,6 +8,7 @@ import router from '@/router'
 import store from '@/store'
 import api from './utils/backend-api'
 import appUtil from './utils/app-util'
+import i18n from './locales'
 
 Vue.use(Vuetify)
 Vue.config.productionTip = false
@@ -16,12 +17,17 @@ window.Store = store
 Vue.prototype.api = api
 Vue.prototype.appUtil = appUtil
 
+const lang = store.state.language
+if (lang) {
+  i18n.locale = lang
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App)
-  // template: '<App/>',
-  // components: { App }
+  i18n,
+  components: { App },
+  template: '<App/>'
 })

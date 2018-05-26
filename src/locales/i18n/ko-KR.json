@@ -1,0 +1,33 @@
+{
+  "error": {
+    "invalid_grant": "아이디 또는 패스워드가 다릅니다.",
+    "network_error": "네트워크 오류가 발생하였습니다."
+  },
+  "validation": {
+    "required": " 은(는) 필수 입력값 입니다.",
+    "invalid": " 잘못된 형식입니다."
+  },
+  "login": {
+    "applicationName": "Mixst",
+    "userId": "아이디",
+    "password": "비밀번호",
+    "login": "로그인",
+    "singupIntroDesc": "Mixst 를 무료로 이용해보세요.",
+    "singupIntro": "회원가입",
+    "findPasswordDesc": "비밀번호를 잊어 버리셨습니까?",
+    "findPassword": "비밀번호 찾기"
+  },
+  "signup": {
+    "email": "이메일",
+    "passwordConfirm": "비밀번호 확인",
+    "signup": "가입",
+    "agreement": "이용 약관에 동의합니다.",
+    "agreementMsg": "약관에 동의 하여야 합니다!"
+  },
+  "greeting": "반갑습니다 {0}님",
+  "saveCompleted": "저장 완료!",
+  "total": "합계",
+  "notice": {
+    "msg": "메세지가 있습니다."
+  }
+}

@@ -1,3 +1,4 @@
+import i18n from '../locales/index'
 const SearchFilterOps = {
   Equals: '',
   GreaterThan: '_gte',
@@ -149,5 +150,16 @@ export default {
     } else {
       return root
     }
+  },
+  requiredRules(name) {
+    return [v => !!v || name + i18n.tc('lang.validation.required')]
+  },
+  emailRules(name) {
+    return [
+      v => !!v || name + i18n.tc('lang.validation.required'),
+      v =>
+        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
+        name + i18n.tc('lang.validation.invalid')
+    ]
   }
 }

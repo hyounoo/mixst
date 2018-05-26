@@ -3,6 +3,8 @@ import Router from 'vue-router'
 
 import ErrorPage from '@/components/404'
 import Login from '@/components/Login'
+import Signup from '@/components/Signup'
+import Password from '@/components/Password'
 import Player from '@/components/Player'
 
 import Home from '@/pages/Home'
@@ -18,7 +20,9 @@ function requireAuth(to, from, next) {
   if (!auth.loggedIn()) {
     next({
       path: '/login',
-      query: { redirect: to.fullPath }
+      query: {
+        redirect: to.fullPath
+      }
     })
   } else {
     next()
@@ -30,9 +34,29 @@ function requireAuth(to, from, next) {
 export default new Router({
   base: __dirname,
   mode: 'history',
-  scrollBehavior: () => ({ y: 0 }),
-  routes: [
-    { path: '/404', component: ErrorPage, name: 'ErrorPage' },
+  scrollBehavior: () => ({
+    y: 0
+  }),
+  routes: [{
+      path: '/404',
+      component: ErrorPage,
+      name: 'ErrorPage'
+    },
+    {
+      path: '/login',
+      component: Login,
+      name: 'Login'
+    },
+    {
+      path: '/signup',
+      component: Signup,
+      name: 'Signup'
+    },
+    {
+      path: '/password',
+      component: Password,
+      name: 'Password'
+    },
     {
       path: '/home',
       component: Home,
@@ -57,11 +81,6 @@ export default new Router({
       name: 'Contact'
     },
     {
-      path: '/login',
-      component: Login,
-      name: 'Login'
-    },
-    {
       path: '/player',
       component: Player,
       name: 'Player'
@@ -73,8 +92,14 @@ export default new Router({
         next('/login')
       }
     },
-    { path: '/', redirect: '/home' },
-    { path: '*', redirect: '/404' }
+    {
+      path: '/',
+      redirect: '/home'
+    },
+    {
+      path: '*',
+      redirect: '/404'
+    }
   ]
   // meta: {
   //   progress: {
