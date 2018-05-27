@@ -96,9 +96,9 @@ const Pusher = require('pusher');
 const axios = require('axios');
 
 var pusher = new Pusher({
-  appId: '',
-  key: '',
-  secret: '',
+  appId: '532571',
+  key: '2c8ff75753df75edb6ae',
+  secret: '7c73a08fe917ba83522d',
   cluster: 'ap1',
   encrypted: true
 });
@@ -127,7 +127,7 @@ setInterval(_ => {
   })
 }, 5000)
 // Start app
-app.listen(8000, () => console.log('App running on port 8000!'));
+app.listen(5000, () => console.log('App running on port 5000!'));
 
 module.exports = {
   ready: readyPromise,

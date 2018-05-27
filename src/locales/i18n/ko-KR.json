@@ -24,6 +24,7 @@
     "agreement": "이용 약관에 동의합니다.",
     "agreementMsg": "약관에 동의 하여야 합니다!"
   },
+  "p2pEnchange": "P2P 코인 거래소",
   "greeting": "반갑습니다 {0}님",
   "saveCompleted": "저장 완료!",
   "total": "합계",

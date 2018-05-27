@@ -5,9 +5,7 @@ import ErrorPage from '@/components/404'
 import Login from '@/components/Login'
 import Signup from '@/components/Signup'
 import Password from '@/components/Password'
-import Player from '@/components/Player'
 
-import Home from '@/pages/Home'
 import About from '@/pages/About'
 import Contact from '@/pages/Contact'
 import Dashboard from '@/pages/Dashboard'
@@ -38,9 +36,32 @@ export default new Router({
     y: 0
   }),
   routes: [{
+      path: '*',
+      redirect: '/404'
+    },
+    {
       path: '/404',
       component: ErrorPage,
       name: 'ErrorPage'
+    },
+    {
+      path: '/',
+      redirect: '/dashboard'
+    },
+    {
+      path: '/dashboard',
+      component: Dashboard,
+      name: 'Dashboard'
+    },
+    {
+      path: '/about',
+      component: About,
+      name: 'About'
+    },
+    {
+      path: '/contact',
+      component: Contact,
+      name: 'Contact'
     },
     {
       path: '/login',
@@ -58,47 +79,11 @@ export default new Router({
       name: 'Password'
     },
     {
-      path: '/home',
-      component: Home,
-      name: 'Home',
-      beforeEnter: requireAuth
-    },
-    {
-      path: '/dashboard',
-      component: Dashboard,
-      name: 'Dashboard',
-      beforeEnter: requireAuth
-    },
-    {
-      path: '/about',
-      component: About,
-      name: 'About',
-      beforeEnter: requireAuth
-    },
-    {
-      path: '/contact',
-      component: Contact,
-      name: 'Contact'
-    },
-    {
-      path: '/player',
-      component: Player,
-      name: 'Player'
-    },
-    {
       path: '/logout',
       beforeEnter(to, from, next) {
         auth.logout()
-        next('/login')
+        next('/dashboard')
       }
-    },
-    {
-      path: '/',
-      redirect: '/home'
-    },
-    {
-      path: '*',
-      redirect: '/404'
     }
   ]
   // meta: {

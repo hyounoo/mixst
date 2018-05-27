@@ -24,6 +24,7 @@
     "agreement": "Terms of agreement.",
     "agreementMsg": "You must agree to continue!"
   },
+  "p2pEnchange": "P2P Exchange",
   "greeting": "Hello, {0}",
   "saveCompleted": "Save completed!",
   "total": "Sum",

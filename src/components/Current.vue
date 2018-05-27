@@ -37,7 +37,7 @@ export default {
   width: 30%;
 }
 div p {
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 h2 {
   font-size: 1.5em;
