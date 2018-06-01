@@ -9,6 +9,7 @@ import Password from '@/components/Password'
 import About from '@/pages/About'
 import Contact from '@/pages/Contact'
 import Dashboard from '@/pages/Dashboard'
+import Seller from '@/pages/Seller'
 
 import auth from '@/utils/auth'
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/dashboard',
       component: Dashboard,
       name: 'Dashboard'
+    },
+    {
+      path: '/seller',
+      component: Seller,
+      name: 'Seller'
     },
     {
       path: '/about',

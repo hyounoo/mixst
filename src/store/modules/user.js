@@ -16,11 +16,18 @@ const state = {
 }
 
 const actions = {
-  updateUser({ commit }, { user, token }) {
+  updateUser({
+    commit
+  }, {
+    user,
+    token
+  }) {
     commit('setToken', token)
     commit('setUser', user)
   },
-  logout({ commit }) {
+  logout({
+    commit
+  }) {
     commit('setToken', null)
     commit('setUser', {})
   }

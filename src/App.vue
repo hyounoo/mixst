@@ -34,8 +34,7 @@
       </v-content>
       <v-footer class="blue lighten-3" dark app>
         <v-spacer></v-spacer>
-        <span class="white--text mr-2">Mixst &copy; 2018 </span>
-        <v-spacer></v-spacer>
+        <span class="white--text mr-5">Mixst &copy; 2018</span>
       </v-footer>
       <v-btn fab dark fixed bottom right small color="red" v-scroll="onScroll" v-show="fab" @click="toTop">
         <v-icon>keyboard_arrow_up</v-icon>

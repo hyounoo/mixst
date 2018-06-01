@@ -7,6 +7,8 @@ import user from './modules/user'
 // import products from './modules/products'
 // import orders from './modules/orders'
 // import customers from './modules/customers'
+
+import coins from './modules/coins'
 import i18n from '../locales'
 
 Vue.use(Vuex)
@@ -52,6 +54,7 @@ export default new Vuex.Store({
   },
   modules: {
     user,
+    coins
     // products,
     // orders,
     // customers
