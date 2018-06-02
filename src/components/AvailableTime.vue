@@ -3,30 +3,42 @@
     <v-card>
       <v-card-text>
         <v-layout row wrap>
-          <v-flex xs6 sm3>
-            <v-dialog
-              ref="startDatePicker"
-              :close-on-content-click="false"
-              v-model="startDatePickerModal"
-              :return-value.sync="startDate"
-              persistent
-              lazy
-              full-width
-              width="290px"
-            >
-              <v-text-field
-                slot="activator"
-                v-model="startDate"
-                label="Start date"
-                prepend-icon="event"
-                readonly
-              ></v-text-field>
-              <v-date-picker v-model="startDate" @input="$refs.startDatePicker.save(startDate)"></v-date-picker>
-            </v-dialog>
+          <v-flex xs12 md3 offset-md1>
+            <v-layout row wrap>
+              <v-flex xs1>월</v-flex>
+              <v-flex xs1>화</v-flex>
+              <v-flex xs1>수</v-flex>
+              <v-flex xs1>목</v-flex>
+              <v-flex xs1>금</v-flex>
+              <v-flex xs1>토</v-flex>
+              <v-flex xs1>일</v-flex>
+            </v-layout>
+            <v-layout row wrap>
+              <v-flex xs1>
+                <v-checkbox v-model="days" value="mon" color="red" hide-details></v-checkbox>
+              </v-flex>
+              <v-flex xs1>
+                <v-checkbox v-model="days" value="tue" color="red darken-3" hide-details></v-checkbox>
+              </v-flex>
+              <v-flex xs1>
+                <v-checkbox v-model="days" value="wed" color="indigo" hide-details></v-checkbox>
+              </v-flex>
+              <v-flex xs1>
+                <v-checkbox v-model="days" value="thu" color="indigo darken-3" hide-details></v-checkbox>
+              </v-flex>
+              <v-flex xs1>
+                <v-checkbox v-model="days" value="fri" color="orange" hide-details></v-checkbox>
+              </v-flex>
+              <v-flex xs1>
+                <v-checkbox v-model="days" value="sat" color="orange darken-3" hide-details></v-checkbox>
+              </v-flex>
+              <v-flex xs1>
+                <v-checkbox v-model="days" value="sun" color="blue" hide-details></v-checkbox>
+              </v-flex>
+            </v-layout>
           </v-flex>
-          <v-flex xs6 sm3>
+          <v-flex xs6 md3 offset-md2>
             <v-dialog
-              v-show="startDate"
               ref="startTimePicker"              
               :close-on-content-click="false"
               v-model="startTimePickerModal"
@@ -47,30 +59,8 @@
               </v-time-picker>
             </v-dialog>
           </v-flex>
-          <v-flex xs6 sm3>
+          <v-flex xs6 md3>
             <v-dialog
-              ref="endDatePicker"
-              :close-on-content-click="false"
-              v-model="endDatePickerModal"
-              :return-value.sync="endDate"
-              persistent
-              lazy
-              full-width
-              width="290px"
-            >
-              <v-text-field
-                slot="activator"
-                v-model="endDate"
-                label="End date"
-                prepend-icon="event"
-                readonly
-              ></v-text-field>
-              <v-date-picker v-model="endDate" @input="$refs.endDatePicker.save(endDate)"></v-date-picker>
-            </v-dialog>
-          </v-flex>
-          <v-flex xs6 sm3>
-            <v-dialog
-              v-show="endDate"
               ref="endTimePicker"              
               :close-on-content-click="false"
               v-model="endTimePickerModal"
@@ -102,13 +92,10 @@ export default {
   data() {
     return {
       valid: false,
-      startDate: null,
+      days: [],
       startTime: null,
-      startDatePickerModal: false,
       startTimePickerModal: false,
-      endDate: null,
       endTime: null,
-      endDatePickerModal: false,
       endTimePickerModal: false
     }
   },

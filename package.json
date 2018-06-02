@@ -45,6 +45,7 @@
     "connect-history-api-fallback": "^1.4.0",
     "copy-webpack-plugin": "^4.1.1",
     "cross-env": "^5.0.5",
+    "cryptofont": "^0.1.1",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "eslint": "^4.9.0",

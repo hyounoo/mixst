@@ -16,14 +16,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     loading: false,
-    showHeader: true,
     language: 'ko',
-    fab: false,
-    hideSSN: true,
-    step: null
-  },
-  getters: {
-    getStep: state => () => state.step
   },
   actions: {
     setLoadingStatus(context, status) {
@@ -33,11 +26,6 @@ export default new Vuex.Store({
       commit
     }, lang) {
       commit('setI18n', lang)
-    },
-    updateSurveyStep({
-      commit
-    }, step) {
-      commit('setSurveyStep', step)
     }
   },
   mutations: {
@@ -47,9 +35,6 @@ export default new Vuex.Store({
     setI18n(state, lang) {
       state.language = lang
       i18n.locale = lang
-    },
-    setSurveyStep(state, step) {
-      state.step = step
     }
   },
   modules: {
