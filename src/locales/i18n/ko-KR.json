@@ -8,9 +8,28 @@
     "invalid": " 잘못된 형식입니다."
   },
   "seller": {
-    "coin": "판매코인",
-    "amount": "판매수량",
-    "exchangeRate": "단위",
+    "coinInfo": {
+      "coin": "판매코인",
+      "amount": "판매수량",
+      "exchangeRate": "단위"
+    },
+    "tradeInfo": {
+      "type": "거래유형",
+      "payment": "지불방법",
+      "amount": "금액"
+    },
+    "availableTime": {
+      "mon": "월",
+      "tue": "화",
+      "wed": "수",
+      "thu": "목",
+      "fri": "금",
+      "sat": "토",
+      "sun": "일",
+      "all": "상시",
+      "start": "시작시간",
+      "end": "종료시간"
+    },
     "description": "거래설명"
   },
   "login": {

@@ -8,9 +8,28 @@
     "invalid": " must be valid."
   },
   "seller": {
-    "coin": "Coin",
-    "amount": "Amount",
-    "exchangeRate": "Rate",
+    "coinInfo": {
+      "coin": "Coin",
+      "amount": "Amount",
+      "exchangeRate": "Rate"
+    },
+    "tradeInfo": {
+      "type": "Type",
+      "payment": "Method",
+      "amount": "Amount"
+    },
+    "availableTime": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun",
+      "all": "All",
+      "start": "Start time",
+      "end": "End time"
+    },
     "description": "Description"
   },
   "login": {

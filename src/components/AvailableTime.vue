@@ -3,37 +3,41 @@
     <v-card>
       <v-card-text>
         <v-layout row wrap>
-          <v-flex xs12 md3 offset-md1>
+          <v-flex xs12 md4 lg3 offset-md1>
             <v-layout row wrap>
-              <v-flex xs1>월</v-flex>
-              <v-flex xs1>화</v-flex>
-              <v-flex xs1>수</v-flex>
-              <v-flex xs1>목</v-flex>
-              <v-flex xs1>금</v-flex>
-              <v-flex xs1>토</v-flex>
-              <v-flex xs1>일</v-flex>
+              <v-flex pa-0>{{$t('lang.seller.availableTime.mon')}}</v-flex>
+              <v-flex pa-0>{{$t('lang.seller.availableTime.tue')}}</v-flex>
+              <v-flex pa-0>{{$t('lang.seller.availableTime.wed')}}</v-flex>
+              <v-flex pa-0>{{$t('lang.seller.availableTime.thu')}}</v-flex>
+              <v-flex pa-0>{{$t('lang.seller.availableTime.fri')}}</v-flex>
+              <v-flex pa-0>{{$t('lang.seller.availableTime.sat')}}</v-flex>
+              <v-flex pa-0>{{$t('lang.seller.availableTime.sun')}}</v-flex>
+              <v-flex pa-0>{{$t('lang.seller.availableTime.all')}}</v-flex>
             </v-layout>
-            <v-layout row wrap>
-              <v-flex xs1>
-                <v-checkbox v-model="days" value="mon" color="red" hide-details></v-checkbox>
+            <v-layout row wrap> 
+              <v-flex pl-2>
+                <v-checkbox  v-model="days" value="mon" color="red" hide-details></v-checkbox>
               </v-flex>
-              <v-flex xs1>
+              <v-flex pl-2>
                 <v-checkbox v-model="days" value="tue" color="red darken-3" hide-details></v-checkbox>
               </v-flex>
-              <v-flex xs1>
+              <v-flex pl-2>
                 <v-checkbox v-model="days" value="wed" color="indigo" hide-details></v-checkbox>
               </v-flex>
-              <v-flex xs1>
+              <v-flex pl-2>
                 <v-checkbox v-model="days" value="thu" color="indigo darken-3" hide-details></v-checkbox>
               </v-flex>
-              <v-flex xs1>
+              <v-flex pl-2>
                 <v-checkbox v-model="days" value="fri" color="orange" hide-details></v-checkbox>
               </v-flex>
-              <v-flex xs1>
+              <v-flex pl-2>
                 <v-checkbox v-model="days" value="sat" color="orange darken-3" hide-details></v-checkbox>
               </v-flex>
-              <v-flex xs1>
+              <v-flex pl-2>
                 <v-checkbox v-model="days" value="sun" color="blue" hide-details></v-checkbox>
+              </v-flex>
+              <v-flex pl-2>
+                <v-checkbox v-model="days" value="all" color="blue darken-3" hide-details></v-checkbox>
               </v-flex>
             </v-layout>
           </v-flex>
@@ -51,7 +55,7 @@
               <v-text-field
                 slot="activator"
                 v-model="startTime"
-                label="Start time"
+                :label="$t('lang.seller.availableTime.start')"                
                 prepend-icon="access_time"
                 readonly
               ></v-text-field>
@@ -73,7 +77,7 @@
               <v-text-field
                 slot="activator"
                 v-model="endTime"
-                label="End time"
+                :label="$t('lang.seller.availableTime.end')"
                 prepend-icon="access_time"
                 readonly
               ></v-text-field>
