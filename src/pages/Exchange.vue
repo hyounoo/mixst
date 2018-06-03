@@ -1,30 +1,25 @@
 <template>
   <v-container fluid grid-list-md>
-    <v-layout row wrap>
-      <v-flex xs12 sm6 pa-3>
-        <coin-info></coin-info>
-      </v-flex>
-      <v-flex xs12 sm6 pa-3>
-        <trade-info></trade-info>
-      </v-flex>
-      <v-flex xs12 pa-3>
-        <available-time></available-time>
-      </v-flex>
-      <v-flex xs12 pa-3>
-        <v-card>
-          <v-card-text>
-            <v-text-field :label="$t('lang.seller.description')"></v-text-field>
-          </v-card-text>
-        </v-card>        
-      </v-flex>
-      <v-flex xs12 pa-3>
-        <v-card>
-          <v-card-text>
-            <p>안내문</p>
-          </v-card-text>
-        </v-card>        
-      </v-flex>
-    </v-layout>
+    <v-tabs slot="extension" v-model="tab" centered color="accent" slider-color="white" >
+        <v-tab :href="`#tab-sell`">
+          <span class="white--text">Sell</span>
+        </v-tab>
+        <v-tab :href="`#tab-buy`">
+          <span class="white--text">Buy</span>
+        </v-tab>
+      </v-tabs>
+    </v-toolbar>
+    <v-tabs-items v-model="tab">
+      <v-tab-item :id="`tab-sell`" >
+        <v-subheader>{{ $t('lang.exchange.saleInfo') }}</v-subheader>
+        <sell-tab></sell-tab>
+      </v-tab-item>
+      <v-tab-item :id="`tab-buy`" >
+        <v-subheader>{{ $t('lang.exchange.buyInfo') }}</v-subheader>
+        <buy-tab></buy-tab>
+      </v-tab-item>
+    </v-tabs-items>
+    
     <v-btn
       :loading="loading"
       :disabled="loading"
@@ -40,14 +35,15 @@
 </template>
 
 <script>
-import CoinInfo from '@/components/CoinInfo'
-import TradeInfo from '@/components/TradeInfo'
-import AvailableTime from '@/components/AvailableTime'
+import SellTab from '@/components/SellTab'
+import BuyTab from '@/components/BuyTab'
 export default {
   data() {
     return {
       loader: null,
-      loading: false
+      loading: false,
+      tab: null,
+      text: 'test'
     }
   },
   watch: {
@@ -61,12 +57,12 @@ export default {
     }
   },
   components: {
-    CoinInfo,
-    TradeInfo,
-    AvailableTime
+    SellTab,
+    BuyTab
   },
   created() {
     this.$store.dispatch('coins/getAllCoins')
+    this.$store.dispatch('tradeTypes/getAllTypes')
   }
 }
 </script>

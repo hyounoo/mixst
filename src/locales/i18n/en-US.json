@@ -7,16 +7,32 @@
     "required": " is required.",
     "invalid": " must be valid."
   },
-  "seller": {
+  "exchange": {
     "coinInfo": {
-      "coin": "Coin",
-      "amount": "Amount",
+      "sellCoin": "Sell coin",
+      "buyCoin": "Buy coin",
+      "sellAmount": "Sell amount",
+      "buyAmount": "Buy amount",
       "exchangeRate": "Rate"
     },
     "tradeInfo": {
       "type": "Type",
       "payment": "Method",
       "amount": "Amount"
+    },
+    "splitInfo": {
+      "minimum": "Minimum",
+      "maximum": "Maximum",
+      "sellingAmount": "Amount",
+      "buyingAmount": "Amount",
+      "price": "Price",
+      "rate": "Rate"
+    },
+    "tradeTypes": {
+      "normal": "normal",
+      "split": "split",
+      "bid": "bid",
+      "combined": "split / bid"
     },
     "availableTime": {
       "mon": "Mon",
@@ -30,6 +46,8 @@
       "start": "Start time",
       "end": "End time"
     },
+    "saleInfo": "Sale info",
+    "buyInfo": "Buy info",
     "description": "Description"
   },
   "login": {

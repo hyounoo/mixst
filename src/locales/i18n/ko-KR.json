@@ -7,16 +7,32 @@
     "required": " 은(는) 필수 입력값 입니다.",
     "invalid": " 잘못된 형식입니다."
   },
-  "seller": {
+  "exchange": {
     "coinInfo": {
-      "coin": "판매코인",
-      "amount": "판매수량",
+      "sellCoin": "판매코인",
+      "buyCoin": "구매코인",
+      "sellAmount": "판매수량",
+      "buyAmount": "구매수량",
       "exchangeRate": "단위"
     },
     "tradeInfo": {
       "type": "거래유형",
       "payment": "지불방법",
       "amount": "금액"
+    },
+    "splitInfo": {
+      "minimum": "최소수량",
+      "maximum": "최대수량",
+      "sellingAmount": "매도수량",
+      "buyingAmount": "매수수량",
+      "price": "금액",
+      "rate": "단위"
+    },
+    "tradeTypes": {
+      "normal": "일반",
+      "split": "분할",
+      "bid": "입찰",
+      "combined": "분할 / 입찰"
     },
     "availableTime": {
       "mon": "월",
@@ -30,6 +46,8 @@
       "start": "시작시간",
       "end": "종료시간"
     },
+    "saleInfo": "판매정보",
+    "buyInfo": "구매정보",
     "description": "거래설명"
   },
   "login": {

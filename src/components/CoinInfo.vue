@@ -4,7 +4,7 @@
       <v-card-text>
         <v-layout row>
           <v-flex xs6>
-            <v-select :label="$t('lang.seller.coinInfo.coin')" v-if="coins"
+            <v-select :label="$t(coinLabel)" v-if="coins"
               v-model="selectedCoin" item-text="name" item-value="code"
               :items="coins" >
               <template slot="selection" slot-scope="data" v-if="data.item">
@@ -29,11 +29,11 @@
             </v-select>
           </v-flex>
           <v-flex xs6>
-            <v-text-field :label="$t('lang.seller.coinInfo.amount')" :rules="appUtil.requiredRules($t('lang.seller.coinInfo.amount'))"
+            <v-text-field :label="$t(amountLabel)" :rules="appUtil.requiredRules($t(amountLabel))"
               ></v-text-field>
           </v-flex>
-          <v-flex xs6>            
-            <v-text-field :label="$t('lang.seller.coinInfo.exchangeRate')" :rules="appUtil.requiredRules($t('lang.seller.coinInfo.exchangeRate'))"
+          <v-flex xs6>
+            <v-text-field :label="$t('lang.exchange.coinInfo.exchangeRate')" :rules="appUtil.requiredRules($t('lang.exchange.coinInfo.exchangeRate'))"
               ></v-text-field>
           </v-flex>
         </v-layout>        
@@ -44,6 +44,7 @@
 
 <script>
 export default {
+  props: ['type'],
   data() {
     return {
       valid: true,
@@ -53,6 +54,16 @@ export default {
   computed: {
     coins() {
       return this.$store.state.coins.coins
+    },
+    coinLabel() {
+      return this.type === 'sell'
+        ? 'lang.exchange.coinInfo.sellCoin'
+        : 'lang.exchange.coinInfo.buyCoin'
+    },
+    amountLabel() {
+      return this.type === 'sell'
+        ? 'lang.exchange.coinInfo.sellAmount'
+        : 'lang.exchange.coinInfo.buyAmount'
     }
   }
 }

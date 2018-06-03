@@ -9,6 +9,7 @@ import user from './modules/user'
 // import customers from './modules/customers'
 
 import coins from './modules/coins'
+import tradeTypes from './modules/tradeTypes'
 import i18n from '../locales'
 
 Vue.use(Vuex)
@@ -39,7 +40,8 @@ export default new Vuex.Store({
   },
   modules: {
     user,
-    coins
+    coins,
+    tradeTypes
     // products,
     // orders,
     // customers

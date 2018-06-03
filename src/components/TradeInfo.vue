@@ -4,16 +4,24 @@
       <v-card-text>
         <v-layout row>
           <v-flex xs12 sm6>
-            <v-select :label="$t('lang.seller.tradeInfo.type')"
-              :items="tradeTypes"  item-text="text" item-value="type">
+            <v-select :label="$t('lang.exchange.tradeInfo.type')" v-if="tradeTypes"              
+              :items="tradeTypes" v-model="tradeInfo.tradeType">
+              <template slot="selection" slot-scope="data">
+                {{$t('lang.exchange.tradeTypes.' + data.item)}}
+              </template>
+              <template slot="item" slot-scope="data">
+                <v-list-tile-content>
+                  <v-list-tile-title>{{$t('lang.exchange.tradeTypes.' + data.item)}}</v-list-tile-title>
+                </v-list-tile-content>
+              </template>
             </v-select>
           </v-flex>
           <v-flex xs12 sm6>
-            <v-text-field :label="$t('lang.seller.tradeInfo.payment')" :rules="appUtil.requiredRules($t('lang.seller.tradeInfo.payment'))"
+            <v-text-field :label="$t('lang.exchange.tradeInfo.payment')" :rules="appUtil.requiredRules($t('lang.exchange.tradeInfo.payment'))"
               ></v-text-field>
           </v-flex>
           <v-flex xs12 sm6>            
-            <v-text-field :label="$t('lang.seller.tradeInfo.amount')" :rules="appUtil.requiredRules($t('lang.seller.tradeInfo.amount'))"
+            <v-text-field :label="$t('lang.exchange.tradeInfo.amount')" :rules="appUtil.requiredRules($t('lang.exchange.tradeInfo.amount'))"
               ></v-text-field>
           </v-flex>
         </v-layout>        
@@ -24,6 +32,7 @@
 
 <script>
 export default {
+  props: ['tradeInfo'],
   data() {
     return {
       valid: true
@@ -31,10 +40,7 @@ export default {
   },
   computed: {
     tradeTypes() {
-      return ['일반', '분할']
-    },
-    coins() {
-      return this.$store.state.coins.coins
+      return this.$store.state.tradeTypes.types
     }
   }
 }

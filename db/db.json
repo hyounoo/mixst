@@ -34,6 +34,9 @@
       "icon": "cf cf-etc"
     }
   ],
+  "tradeTypes": [
+    "normal", "split", "bid", "combined"
+  ],
   "customers": [{
       "membership": false,
       "mobile": "555-555-555",

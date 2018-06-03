@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-app id="inspire">
-      <v-navigation-drawer fixed v-model="drawer" left app class="blue lighten-3" dark>
+      <v-navigation-drawer fixed v-model="drawer" left app class="accent" dark>
         <v-list>
           <v-list-tile v-for="item in items.filter(i => i.visible)" :key="item.title" :to="item.url">
             <v-list-tile-action>
@@ -13,12 +13,12 @@
           </v-list-tile>
         </v-list>
       </v-navigation-drawer>    
-      <v-toolbar class="blue lighten-3" dark fixed app>            
+      <v-toolbar class="accent" dark fixed app>            
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-toolbar-title>{{$t('lang.p2pEnchange')}} </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-title>
-          <span style="color:#0058ff">{{ $t('lang.greeting', ['testUser']) }}</span>
+          <span color="secondary">{{ $t('lang.greeting', ['testUser']) }}</span>
         </v-toolbar-title>
         <v-menu bottom offset-y left attach>
           <v-btn slot="activator" flat style="min-width: 64px">
