@@ -4,7 +4,7 @@
       <v-card-text>
         <v-layout row>
           <v-flex xs6>
-            <v-select label="판매코인" v-if="coins"
+            <v-select :label="$t('lang.seller.coin')" v-if="coins"
               v-model="selectedCoin" item-text="name" item-value="code"
               :items="coins" >
               <template slot="selection" slot-scope="data" v-if="data.item">
@@ -29,11 +29,11 @@
             </v-select>
           </v-flex>
           <v-flex xs6>
-            <v-text-field label="판매수량" :rules="appUtil.requiredRules('판매수량')"
+            <v-text-field :label="$t('lang.seller.amount')" :rules="appUtil.requiredRules($t('lang.seller.amount'))"
               ></v-text-field>
           </v-flex>
           <v-flex xs6>            
-            <v-text-field label="단위" :rules="appUtil.requiredRules('단위')"
+            <v-text-field :label="$t('lang.seller.exchangeRate')" :rules="appUtil.requiredRules($t('lang.seller.exchangeRate'))"
               ></v-text-field>
           </v-flex>
         </v-layout>        

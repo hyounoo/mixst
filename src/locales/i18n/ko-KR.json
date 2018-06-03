@@ -7,6 +7,12 @@
     "required": " 은(는) 필수 입력값 입니다.",
     "invalid": " 잘못된 형식입니다."
   },
+  "seller": {
+    "coin": "판매코인",
+    "amount": "판매수량",
+    "exchangeRate": "단위",
+    "description": "거래설명"
+  },
   "login": {
     "applicationName": "Mixst",
     "userId": "아이디",
@@ -27,7 +33,6 @@
   "p2pEnchange": "P2P 코인 거래소",
   "greeting": "반갑습니다 {0}님",
   "saveCompleted": "저장 완료!",
-  "total": "합계",
   "notice": {
     "msg": "메세지가 있습니다."
   }

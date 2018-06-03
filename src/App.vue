@@ -17,6 +17,9 @@
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-toolbar-title>{{$t('lang.p2pEnchange')}} </v-toolbar-title>
         <v-spacer></v-spacer>
+        <v-toolbar-title>
+          <span style="color:#0058ff">{{ $t('lang.greeting', ['testUser']) }}</span>
+        </v-toolbar-title>
         <v-menu bottom offset-y left attach>
           <v-btn slot="activator" flat style="min-width: 64px">
             <img :src="`https://countryflags.io/${currentLanguage.country}/flat/32.png`" width="32px">
@@ -26,8 +29,8 @@
               <img :src="`https://countryflags.io/${language.country}/flat/24.png`" width="24px">              
             </v-list-tile-avatar>
             <v-list-tile-title>{{language.title}}</v-list-tile-title>
-          </v-list-tile>
-        </v-menu>
+          </v-list-tile>          
+        </v-menu>        
       </v-toolbar>
       <v-content>
         <router-view></router-view>        

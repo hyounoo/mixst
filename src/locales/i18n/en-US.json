@@ -7,6 +7,12 @@
     "required": " is required.",
     "invalid": " must be valid."
   },
+  "seller": {
+    "coin": "Coin",
+    "amount": "Amount",
+    "exchangeRate": "Rate",
+    "description": "Description"
+  },
   "login": {
     "applicationName": "Mixst",
     "userId": "User ID",
@@ -27,7 +33,6 @@
   "p2pEnchange": "P2P Exchange",
   "greeting": "Hello, {0}",
   "saveCompleted": "Save completed!",
-  "total": "Sum",
   "notice": {
     "msg": "You have message"
   }

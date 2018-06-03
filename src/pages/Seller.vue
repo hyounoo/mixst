@@ -13,7 +13,7 @@
       <v-flex xs12 pa-3>
         <v-card>
           <v-card-text>
-            <v-text-field label="거래설명"></v-text-field>  
+            <v-text-field :label="$t('lang.seller.description')"></v-text-field>
           </v-card-text>
         </v-card>        
       </v-flex>
