@@ -90,25 +90,25 @@ export default {
           title: 'Exchange',
           icon: 'compare_arrows',
           url: '/exchange',
-          visible: auth.loggedIn()
+          visible: true // auth.loggedIn()
         },
         {
           title: 'Account',
           icon: 'account_box',
           url: '/acount',
-          visible: auth.loggedIn()
+          visible: true // auth.loggedIn()
         },
         {
           title: 'Wallet',
           icon: 'account_balance_wallet',
           url: '/wallet',
-          visible: auth.loggedIn()
+          visible: true // auth.loggedIn()
         },
         {
           title: 'Admin',
           icon: 'gavel',
           url: '/admin',
-          visible: auth.loggedIn()
+          visible: true // auth.loggedIn()
         },
         {
           title: 'Contact',
@@ -132,13 +132,13 @@ export default {
           title: 'Login',
           icon: 'lock_open',
           url: '/login',
-          visible: !auth.loggedIn()
+          visible: true // !auth.loggedIn()
         },
         {
           title: 'Signup',
           icon: 'exit_to_app',
           url: '/signup',
-          visible: !auth.loggedIn()
+          visible: true // !auth.loggedIn()
         }
       ]
     }
