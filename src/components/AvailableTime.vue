@@ -116,7 +116,6 @@
               lazy
               full-width
               width="290px"
-              clearable
             >
               <v-text-field
                 slot="activator"
@@ -124,6 +123,7 @@
                 :label="$t('lang.exchange.availableTime.end')"
                 prepend-icon="access_time"
                 readonly
+                clearable
               ></v-text-field>
               <v-time-picker v-model="endTime" format="24hr" @input="$refs.endTimePicker.save(endTime)">
               </v-time-picker>
